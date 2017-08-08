@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+  </head>
+  <body>
+  <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:700' rel='stylesheet' type='text/css'>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' rel='stylesheet' type='text/css'>
+  <link href="styles.css" rel='stylesheet' type='text/css'>
+
+<svg height="80%" width="auto" class="loading" version="1.1" xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	  viewBox="0 0 50 120" enable-background="new 0 0 574.558 120" xml:space="preserve">
+  <defs>
+    <pattern id="water" width=".25" height="1.1" patternContentUnits="objectBoundingBox">
+      <path fill="orangered" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"/>
+    </pattern>
+  
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 474 1635">
+  <defs>
+    <style>
+      .cls-1{fill:#fff;}
+    </style>
+  </defs>
+  <title>
+    svg
+  </title>
+  <path class="cls-1" d="M2 852c0 10 0 19 1 29 3 42 9 83 13 125 3 29 7 59 7 89 1 55 0 109-3 164a732 732 0 0 1-12 95c-4 24-9 48-10 73s4 68 11 101c4 21 12 42 23 60 5 7 10 14 17 20s27 13 42 14a160 160 0 0 0 59-7c17-5 33-4 47 8s44 18 68 5l12-8c8-6 18-9 28-7l17 4a157 157 0 0 0 58 7c24-2 43-10 56-32s14-26 19-41 11-50 14-76c1-13 3-26 3-39 0-24-4-47-8-70a791 791 0 0 1-15-131c0-18 0-35-1-53-1-37-2-73 1-110s8-81 13-122c3-29 6-58 7-88v-26c0-25 0-50-2-74s-5-64-9-96c-7-57-15-113-24-169-12-76-25-152-45-227-5-20-11-39-19-57-3-7-7-13-16-14s-4-2-4-6v-27s2-5 5-5h10c5-1 7-3 7-8s-2-23-3-35l-7-78c-1-9-6-16-13-20a62 62 0 0 0-22-8 543 543 0 0 0-73-7 585 585 0 0 0-97 0c-12 2-23 3-34 9s-14 10-15 20-1 7-1 10l-6 69-3 35c-1 7 1 8 7 9h9c4 0 6 2 6 6v24s-2 7-6 7-11 5-14 12a366 366 0 0 0-16 48c-19 74-33 148-45 222S19 607 12 674q-7 55-9 111c-1 16-1 33-1 49v18z"/>
+</svg>
+    
+    <mask id="bottle_mask">
+      <use x="0" y="0" xlink:href="#Layer_1" opacity="1" fill="#ffffff"/>
+    </mask>
+  </defs>
+  
+  <rect class="water-fill" mask="url(#bottle_mask)" fill="url(#water)" x="-40" y="0" width="600" height="120"/>
+  
+</svg>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+    <script>
+        var i = 1;
+        
+        $("body").click(function(){
+            var hit = i;
+            setTimeout(function() { 
+              $(".water-fill").css("-webkit-animation-play-state", "paused");
+                console.log(hit);
+            }, 0);
+            
+            if(hit >= 170 && hit <= 180){
+//                console.log("you win!");
+                $(".loading").addClass("animated pulse");
+                console.log("you win, your hit was "+ hit);
+            } else {
+                $(".loading").addClass("animated tada");
+                console.log("you loose!");
+            }
+        });
+        
+        function addOne() {
+            i += 1;
+//        console.log("the time is = " + i);
+        }
+
+        var interval = setInterval( addOne, 0.001);
+    </script>
+
+  </body>
+</html>
